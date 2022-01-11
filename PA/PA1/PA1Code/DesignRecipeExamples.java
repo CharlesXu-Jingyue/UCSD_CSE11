@@ -5,9 +5,7 @@ class DesignRecipeExamples {
     // Problem 1
 
     int perimeter(int width, int height) {
-
         return (width + height) * 2;
-
     }
 
     int recPeri1 = this.perimeter(2, 5);
@@ -21,11 +19,9 @@ class DesignRecipeExamples {
     // Problem 2
 
     int borderArea(int smallRecWidth, int smallRecHeight,
-    int largeRecWidth, int largeRecHeight) {
-        
+    int largeRecWidth, int largeRecHeight) {   
         return largeRecWidth * largeRecHeight -
         smallRecWidth * smallRecHeight;
-
     }
 
     int borA1 = this.borderArea(4, 6, 7, 12);
@@ -40,9 +36,7 @@ class DesignRecipeExamples {
     
     // Dollar to Yuan currency converter
     int dollarToYuan(int dollar) {
-        
         return dollar * 6;
-
     }
 
     int tuition = this.dollarToYuan(14500);
@@ -66,9 +60,7 @@ class DesignRecipeExamples {
 
     // Feet & inches to inches converted
     int feetAndInchesToInches(int feet, int inches) {
-
         return feet * 12 + inches;
-
     }
 
     int myHeight = this.feetAndInchesToInches(5, 9);

@@ -1,0 +1,115 @@
+# Problem 3
+
+## Original code
+    
+// Dollar to Yuan currency converter
+int dollarToYuan(int dollar) {
+    
+    return dollar * 7;
+
+}
+
+### Test 1
+
+int tuition = this.dollarToYuan(14500);
+/*
+This example converts the quarterly tuition of an international
+student from US dollar to Chinese Yuan (approximately)
+
+Expected return: 87000
+*/
+
+### Test 2
+
+int rent = this.dollarToYuan(600);
+/*
+This example converts my monthly rent from US dollar to Chinese Yuan
+
+Expected return: 3600
+*/
+
+## Run and return (copied from terminal)
+
+(base) alveus@Charless-MBP PA1Code % ./run DesignRecipeExamples.java
+Tester Library v.3.0
+-----------------------------------
+Tests defined in the class: DesignRecipeExamples:
+---------------------------
+DesignRecipeExamples:
+---------------
+new DesignRecipeExamples:1(
+ this.recPeri1 = 14
+ this.recPeri2 = 30
+ this.borA1 = 60
+ this.borA2 = 34
+ this.tuition = 101500
+ this.rent = 4200
+ this.myHeight = 69
+ this.myDadHeight = 70)
+---------------
+No test methods found.
+
+// Lines 43 and 44 are outputs of problem 3
+
+## Justification
+
+The conversion rate of 1 US Dollar is equal to 6.38 Chinese Yuan according to Google, as of Jan 11, 12:12 AM UTC.
+The conversion rate is simplified to 1:6 for the sake of this exercise.
+
+----------------------------------------------------------------------------------------------------
+
+# Problem 4
+
+## Original code
+
+// Feet & inches to inches converted
+int feetAndInchesToInches(int feet, int inches) {
+
+    return feet * 12 + inches;
+
+}
+
+### Test 1
+
+int myHeight = this.feetAndInchesToInches(5, 9);
+/*
+This example converts my height from feet and inches to just inches
+
+Expected return: 69
+*/
+
+### Test 2
+
+int myDadHeight = this.feetAndInchesToInches(5, 10);
+/*
+This example converts my dad's height from feet and inches to just inches
+
+Expected return: 70
+*/
+
+## Run and return (copied from terminal)
+
+(base) alveus@Charless-MBP PA1Code % ./run DesignRecipeExamples.java
+Tester Library v.3.0
+-----------------------------------
+Tests defined in the class: DesignRecipeExamples:
+---------------------------
+DesignRecipeExamples:
+---------------
+new DesignRecipeExamples:1(
+ this.recPeri1 = 14
+ this.recPeri2 = 30
+ this.borA1 = 60
+ this.borA2 = 34
+ this.tuition = 87000
+ this.rent = 3600
+ this.myHeight = 69
+ this.myDadHeight = 70)
+---------------
+No test methods found.
+
+// Lines 106 and 107 are results of problem 4
+
+## Justification
+
+According to Google, 1 foot is equal to 12 inches

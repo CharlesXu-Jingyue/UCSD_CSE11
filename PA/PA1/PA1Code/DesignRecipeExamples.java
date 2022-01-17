@@ -43,14 +43,12 @@ class DesignRecipeExamples {
     /*
     This example converts the quarterly tuition of an international
     student from US dollar to Chinese Yuan (approximately)
-
     Expected return: 87000
     */
 
     int rent = this.dollarToYuan(600);
     /*
     This example converts my monthly rent from US dollar to Chinese Yuan
-
     Expected return: 3600
     */
 
@@ -66,14 +64,12 @@ class DesignRecipeExamples {
     int myHeight = this.feetAndInchesToInches(5, 9);
     /*
     This example converts my height from feet and inches to just inches
-
     Expected return: 69
     */
 
     int myDadHeight = this.feetAndInchesToInches(5, 10);
     /*
     This example converts my dad's height from feet and inches to just inches
-
     Expected return: 70
     */
 

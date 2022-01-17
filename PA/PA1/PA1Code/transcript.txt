@@ -1,35 +1,27 @@
-# Problem 3
+# Problem 3 - Converter
 
 ## Original code
-    
 // Dollar to Yuan currency converter
 int dollarToYuan(int dollar) {
-    
     return dollar * 7;
-
 }
 
 ### Test 1
-
 int tuition = this.dollarToYuan(14500);
 /*
 This example converts the quarterly tuition of an international
 student from US dollar to Chinese Yuan (approximately)
-
 Expected return: 87000
 */
 
 ### Test 2
-
 int rent = this.dollarToYuan(600);
 /*
 This example converts my monthly rent from US dollar to Chinese Yuan
-
 Expected return: 3600
 */
 
 ## Run and return (copied from terminal)
-
 (base) alveus@Charless-MBP PA1Code % ./run DesignRecipeExamples.java
 Tester Library v.3.0
 -----------------------------------
@@ -49,46 +41,42 @@ new DesignRecipeExamples:1(
 ---------------
 No test methods found.
 
-// Lines 43 and 44 are outputs of problem 3
+// Lines 37 and 38 are outputs of problem 3
 
 ## Justification
-
 The conversion rate of 1 US Dollar is equal to 6.38 Chinese Yuan according to Google, as of Jan 11, 12:12 AM UTC.
 The conversion rate is simplified to 1:6 for the sake of this exercise.
 
 ----------------------------------------------------------------------------------------------------
 
-# Problem 4
+# Problem 4 - Combiner
 
 ## Original code
-
 // Feet & inches to inches converted
 int feetAndInchesToInches(int feet, int inches) {
-
     return feet * 12 + inches;
-
 }
 
 ### Test 1
-
 int myHeight = this.feetAndInchesToInches(5, 9);
 /*
 This example converts my height from feet and inches to just inches
-
 Expected return: 69
 */
 
 ### Test 2
-
 int myDadHeight = this.feetAndInchesToInches(5, 10);
 /*
 This example converts my dad's height from feet and inches to just inches
-
 Expected return: 70
 */
 
-## Run and return (copied from terminal)
+### Test 3 (incorrectly output with explanation)
+There cannot be a pair of parameters that produces an incorrent output because linear operation only involves
+multiplications and additions, so the output will always be an intiger. It works for both positive and negative
+parameters too.
 
+## Run and return (copied from terminal)
 (base) alveus@Charless-MBP PA1Code % ./run DesignRecipeExamples.java
 Tester Library v.3.0
 -----------------------------------
@@ -108,8 +96,8 @@ new DesignRecipeExamples:1(
 ---------------
 No test methods found.
 
-// Lines 106 and 107 are results of problem 4
+// Lines 92 and 93 are results of problem 4
 
-## Justification
-
-According to Google, 1 foot is equal to 12 inches
+## Explanation and justification
+This combiner takes in two `int` parameters, feet and inches, and converts them to total inches. According to
+Google, 1 foot is equal to 12 inches

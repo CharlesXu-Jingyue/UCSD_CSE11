@@ -71,11 +71,6 @@ This example converts my dad's height from feet and inches to just inches
 Expected return: 70
 */
 
-### Test 3 (incorrectly output with explanation)
-There cannot be a pair of parameters that produces an incorrent output because linear operation only involves
-multiplications and additions, so the output will always be an intiger. It works for both positive and negative
-parameters too.
-
 ## Run and return (copied from terminal)
 (base) alveus@Charless-MBP PA1Code % ./run DesignRecipeExamples.java
 Tester Library v.3.0
@@ -96,7 +91,7 @@ new DesignRecipeExamples:1(
 ---------------
 No test methods found.
 
-// Lines 94 and 95 are results of problem 4
+// Lines 89 and 90 are results of problem 4
 
 ## Explanation and justification
 This combiner takes in two `int` parameters, feet and inches, and converts them to total inches. According to

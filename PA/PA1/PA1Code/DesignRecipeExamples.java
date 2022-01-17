@@ -73,4 +73,14 @@ class DesignRecipeExamples {
     Expected return: 70
     */
 
+    // Test 3 (incorrect output with explanation)
+    int randomLength = this.feetAndInchesToInches(-5, 10);
+    /*
+    This examples uses random integers including a negative argument
+    Expected return: -50
+    
+    There cannot be a pair of parameters that produces an incorrent output because linear operation only involves
+    multiplications and additions, so the output will always be an intiger. It works for both positive and negative
+    parameters too.
+    */
 }

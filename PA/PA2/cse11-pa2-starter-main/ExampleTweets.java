@@ -94,3 +94,16 @@ class ExampleTweets {
     String displayTweet2 = this.thisTweet2.toText();
     String TweetURL2 = this.thisTweet2.toLink();
 }
+
+class test{
+    int a = 1;
+    String b = "1";
+    int c = 2;
+    int sum = this.a + this.c;
+
+    int SumOfac(int d, int e){
+        return this.a + d;
+    }
+
+    int f = this.SumOfac(3, 4);
+}

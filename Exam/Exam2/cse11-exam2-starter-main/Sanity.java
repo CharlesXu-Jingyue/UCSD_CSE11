@@ -56,3 +56,27 @@ class ProvidedTweetTests {
         t.checkExpect(t2.shortestTweetOnThread(), t1);
     }
 }
+
+class myNumberTests {
+    ExampleArrays ea = new ExampleArrays();
+    Number[] numbersExample = {new WholeNumber(2), new Fraction(2, 10), new WholeNumber(1), new Fraction(3, 2)};
+
+    void testAverageWithoutLowest(Tester t) {
+        t.checkExpect(ea.averageWithoutLowest(this.numbersExample).toDouble(), 1.5);
+    }
+}
+
+class MyTweetTests {
+    User thomas = new User("tomoxl", "Thomas Oxley", 9399);
+    User adam = new User("AdamArthurMD", "Adam Arthur MD MPH", 2947);
+    User bianca = new User("bianca_okeefe", "bianca", 20);
+    Tweet tweet1 = new TextTweet("no need for keystrokes or voices. I created this tweet just by thinking it. #helloworldbci", this.thomas, 11500);
+    Tweet tweet2 = new ReplyTweet("Welcome to Twitter! What do you want the world to know about you, and what this has been like for you?", this.adam, 50, this.tweet1);
+    Tweet tweet3 = new ReplyTweet("Dad says he's just a regular guy who was given an opportunity and that it's been quite an amazing journey", this.bianca, 133, this.tweet2);
+    Tweet tweet4 = new ReplyTweet("Regular guys make the best heroes.", this.adam, 23, this.tweet3);
+    Tweet tweet5 = new ReplyTweet("… and regular gals, of course. Bonus point when those guys/gals are forward-looking and can see the future coming.", this.adam, 6, this.tweet3);
+
+    void testShortestTweetOnThread(Tester t) {
+        t.checkExpect(this.tweet5.shortestTweetOnThread(), tweet1);
+    }
+}

@@ -16,6 +16,7 @@ interface Region {
     
     // Task 1.3: onEdge
     // Your code here
+    boolean onEdge(Point p);
 }
 
 class RectRegion implements Region {
@@ -32,6 +33,16 @@ class RectRegion implements Region {
     
     // Task 1.3: onEdge
     // Your code here
+    public boolean onEdge(Point p) {
+        if((p.x == this.lowerLeft.x && this.lowerLeft.y <= p.y && p.y < this.upperRight.y) ||
+        (p.y == this.upperRight.y && this.lowerLeft.x <= p.x && p.x < this.upperRight.x) ||
+        (p.x == this.upperRight.x && p.y <= this.upperRight.y && this.lowerLeft.y <= p.y) ||
+        (p.y == this.lowerLeft.y && this.upperRight.x >= p.x && p.x > this.lowerLeft.x)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
 
 class CircleRegion implements Region {
@@ -49,4 +60,13 @@ class CircleRegion implements Region {
     
     // Task 1.3: onEdge
     // Your code here
+    public boolean onEdge(Point p) {
+        int dx = p.x - this.center.x;
+	    int dy = p.y - this.center.y;
+        if((int)Math.sqrt(dx * dx + dy * dy) == radius) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

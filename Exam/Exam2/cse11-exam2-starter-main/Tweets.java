@@ -7,9 +7,11 @@ import tester.*;
 interface Tweet {
     // Task 2.1: mostPopularAuthorOnThread
     // Your code here
+    User mostPopularAuthorOnThread();
 
     // Task 2.2: shortestTweetOnThread
     // Your code here
+    Tweet shortestTweetOnThread();
 
     // Provided methods, DO NOT MODIFY
     User getAuthor();
@@ -45,9 +47,15 @@ class TextTweet implements Tweet {
 
     // Task 2.1: mostPopularAuthorOnThread
     // Your code here
+    public User mostPopularAuthorOnThread() {
+        return this.author;
+    }
 
     // Task 2.2: shortestTweetOnThread
     // Your code here
+    public Tweet shortestTweetOnThread() {
+        return this;
+    }
 
     // Provided methods, DO NOT MODIFY
     public User getAuthor() {
@@ -82,9 +90,30 @@ class ReplyTweet implements Tweet {
 
     // Task 2.1: mostPopularAuthorOnThread
     // Your code here
+    public User mostPopularAuthorOnThread() {
+        if(this.author.followers >= this.replyTo.mostPopularAuthorOnThread().followers) {
+            return this.author;
+        } else {
+            return this.replyTo.mostPopularAuthorOnThread();
+        }
+    }
 
     // Task 2.2: shortestTweetOnThread
     // Your code here
+    public Tweet shortestTweetOnThread() {
+        if(this.contents.length() <= this.replyTo.shortestTweetOnThread().getContents().length()){
+            return this;
+        } else {
+            return this.replyTo.shortestTweetOnThread();
+        }
+    }
+    /*
+    class | method | reference | return value
+    ReplyTweet | shortestTweetOnThread() | :1 | :2
+    ReplyTweet | shortestTweetOnThread() | :2 | :3
+    ReplyTweet | shortestTweetOnThread() | :3 | :4
+    TextTweet | shortestTweetOnThread() | :4 | :4
+    */
 
     // Provided methods, DO NOT MODIFY
     public User getAuthor() {

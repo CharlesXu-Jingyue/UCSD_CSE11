@@ -109,7 +109,7 @@ class Decimal implements Number {
     }
 }
 
-class ExamplesNumbers {
+class ExampleNumbers {
     Number n1 = new WholeNumber(5);
     Number n2 = new WholeNumber(7);
     Number n3 = new Fraction(7, 2);

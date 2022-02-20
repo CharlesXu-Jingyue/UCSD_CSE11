@@ -105,7 +105,7 @@ class Decimal implements Number {
     }
 
     public double toDouble() {
-        return Math.pow(this.mantissa, -this.exponent);
+        return this.mantissa*Math.pow(10, -this.exponent);
     }
 }
 

@@ -109,7 +109,7 @@ class Decimal implements Number {
     }
 }
 
-class Numbers {
+class ExamplesNumbers {
     Number n1 = new WholeNumber(5);
     Number n2 = new WholeNumber(7);
     Number n3 = new Fraction(7, 2);
@@ -145,11 +145,9 @@ class Numbers {
         t.checkExpect(this.n2.toText(), "7");
         t.checkExpect(this.n5.toText(), "3.25");
     }
-}
 
-// Exploration
+    // Exploration
 
-class ExamplesNumbers {
     // Exploration 1
     double exploration1 = 0.1 + 0.2 + 0.3;
 

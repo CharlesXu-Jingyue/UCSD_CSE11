@@ -1,13 +1,13 @@
 import tester.*;
 
 class ArrayExamples{
-  static String joinWith(String[] strArray, String strSeparator) {
-    String strJoined = "";
-    for(String s : strArray) {
-      strJoined += s + strSeparator;
+  static String joinWith(String[] stringArray, String stringSeparator) {
+    String stringJoined = "";
+    for(String s : stringArray) {
+      stringJoined += s + stringSeparator;
     }
-    strJoined = strJoined.substring(0,strJoined.length()-strSeparator.length());
-    return strJoined;
+    stringJoined = stringJoined.substring(0,stringJoined.length()-stringSeparator.length());
+    return stringJoined;
   }
   
   static boolean somethingFalse(boolean[] booleanArray) {
@@ -37,6 +37,73 @@ class ArrayExamples{
     }
     return nDouble;
   }
+
+  static double[] numsWithinRange(double[] doubleArray, double low, double high) {
+    int t = 0;
+    for(double d : doubleArray) {
+      if(d > low && d < high) {
+        t ++;
+      }
+    }
+
+    double[] trueDoubles = new double[t];
+    int j = 0;
+    for(double d : doubleArray) {
+      if(d > low && d < high) {
+        trueDoubles[j] = d;
+        j ++;
+      }
+    }
+    return trueDoubles;
+  }
+
+  static Pair maxmin(int[] intArray) {
+    int min = intArray[0];
+    int max = intArray[0];
+    for(int i : intArray) {
+      if(i < min) {
+        min = i;
+      } else if(i > max) {
+        max = i;
+      }
+    }
+    Pair pairMaxMin = new Pair(min, max);
+    return pairMaxMin;
+  }
+
+  static String earliest(String[] stringArray) {
+    String earliestString = stringArray[0];
+    for(String s : stringArray) {
+      int indexEarliestString = (int)earliestString.toCharArray()[0];
+      if(indexEarliestString <= 122 && indexEarliestString >= 97) {
+        indexEarliestString = indexEarliestString - 96;
+      } else {
+        indexEarliestString = indexEarliestString - 64;
+      }
+
+      int indexString = (int)s.toCharArray()[0];
+      if(indexString <= 122 && indexString >= 97) {
+        indexString = indexString - 96;
+      } else {
+        indexString = indexString - 64;
+      }
+      
+      if(indexString < indexEarliestString) {
+        earliestString = s;
+      }
+    }
+    return earliestString;
+  }
+}
+
+class Pair {
+  int a;
+  int b;
+
+  Pair(int a, int b) {
+    this.a = a;
+    this.b = b;
+  }
 }
 
 class ProvidedArrayExamples {
@@ -55,7 +122,6 @@ class ProvidedArrayExamples {
     t.checkExpect(ArrayExamples.countWithinRange(example, 1.1, 2.2), 1);
   }
 
-  /*
   void testNumsWithinRange(Tester t){
     double[] example = {0.0, 3.0, 1.4, 1.5, 2.7, 9.1, 2.1};
     double[] expected = {1.4, 1.5, 2.1};
@@ -71,5 +137,4 @@ class ProvidedArrayExamples {
     String[] example = {"aa", "aab", "abcd", "a"};
     t.checkExpect(ArrayExamples.earliest(example), "a");
   }
-  */
 }

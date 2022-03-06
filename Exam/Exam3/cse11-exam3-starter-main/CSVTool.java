@@ -84,10 +84,10 @@ class CSVTool {
 
         for(String i : query) {
             if(dataMap.containsKey(i)) {
-                if(sumMap.get(i) > sumMap.get(greatestQuery)) {
+                if(sumMap.get(i) >= sumMap.get(greatestQuery)) {
                     greatestQuery = i;
                 }
-                if(countMap.get(i) > countMap.get(mostCommonQuery)) {
+                if(countMap.get(i) >= countMap.get(mostCommonQuery)) {
                     mostCommonQuery = i;
                 }
                 List<Integer> iContains = new ArrayList<Integer>();
@@ -103,6 +103,7 @@ class CSVTool {
                 queryMap.put(i, fileContatins);
             }
         }
+        
         int f = 0;
         for(HashMap<String, List<Integer>> i : mapList) {
             if(i.get(mostCommonQuery).size() > nMatch) {
@@ -132,6 +133,8 @@ class CSVTool {
         for(String i : query) {
             if(queryMap.containsKey(i)) {
                 System.out.println(queryMap.get(i).size() + " " + i + " " + queryMap.get(i));
+            } else {
+                System.out.println(0 + " " + i + " []");
             }
         }
 
@@ -139,7 +142,7 @@ class CSVTool {
 
         // For each data file
         for(int i = 1; i < args.length; i ++) {
-                System.out.println(dataFileMap.get(args[i]).size() + " " + args[i] + " " + dataFileMap.get(args[i]));
+            System.out.println(dataFileMap.get(args[i]).size() + " " + args[i] + " " + dataFileMap.get(args[i]));
         }
     }
 

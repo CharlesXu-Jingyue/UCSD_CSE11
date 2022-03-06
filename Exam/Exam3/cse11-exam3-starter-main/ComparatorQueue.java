@@ -39,7 +39,12 @@ class Queue<E> {
     // Your code here
     boolean remove(E toRemove) {
         if(this.contents.contains(toRemove) == false) {
-            throw new NoSuchElementException();
+            throw new NoSuchElementException(); // This line on the stack
+            /*
+            class             method        this reference      other variables
+            TestException     testRemove    ignore              q = :1
+            Queue<E>          remove        :1                  no
+            */
         }
 
         this.contents.remove(toRemove);
@@ -67,3 +72,11 @@ class Queue<E> {
     }
 }
 
+class TestException {
+    void testRemove(Tester t) {
+        Queue<Integer> q = new Queue(new ArrayList(), new IntCompare_Sanity());
+        q.add(1);
+        q.add(2);
+        t.checkExpect(q.remove(3), 1); // This line on the stack
+    }
+}

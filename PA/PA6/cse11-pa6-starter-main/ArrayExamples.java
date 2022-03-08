@@ -31,7 +31,7 @@ class ArrayExamples{
   static int countWithinRange(double[] doubleArray, double low, double high) {
     int nDouble = 0;
     for(double d : doubleArray) {
-      if(d > low && d < high) {
+      if(d >= low && d <= high) {
         nDouble ++;
       }
     }
@@ -41,7 +41,7 @@ class ArrayExamples{
   static double[] numsWithinRange(double[] doubleArray, double low, double high) {
     int t = 0;
     for(double d : doubleArray) {
-      if(d > low && d < high) {
+      if(d >= low && d <= high) {
         t ++;
       }
     }
@@ -49,7 +49,7 @@ class ArrayExamples{
     double[] trueDoubles = new double[t];
     int j = 0;
     for(double d : doubleArray) {
-      if(d > low && d < high) {
+      if(d >= low && d <= high) {
         trueDoubles[j] = d;
         j ++;
       }
@@ -74,21 +74,7 @@ class ArrayExamples{
   static String earliest(String[] stringArray) {
     String earliestString = stringArray[0];
     for(String s : stringArray) {
-      int indexEarliestString = (int)earliestString.toCharArray()[0];
-      if(indexEarliestString <= 122 && indexEarliestString >= 97) {
-        indexEarliestString = indexEarliestString - 96;
-      } else {
-        indexEarliestString = indexEarliestString - 64;
-      }
-
-      int indexString = (int)s.toCharArray()[0];
-      if(indexString <= 122 && indexString >= 97) {
-        indexString = indexString - 96;
-      } else {
-        indexString = indexString - 64;
-      }
-      
-      if(indexString < indexEarliestString) {
+      if(s.compareTo(earliestString) < 0) {
         earliestString = s;
       }
     }

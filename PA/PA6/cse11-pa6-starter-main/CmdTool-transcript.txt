@@ -1,0 +1,23 @@
+1. One command option between sum, product, mean, max, min, positive, negative, or count and a list of at least 3 integers
+$ java CmdTool product 2 4 8
+64
+$ java CmdTool min -8 -2 3 5
+-8
+
+2. One command option between greater, lesser, or equal and a list of at least 3 integers
+$ java CmdTool greater 2 2 4 8
+4 8
+$ java CmdTool equal 2 2 4 8 2 3
+2 2
+
+3. The -l or -list option followed by one of any command option and a list of at least 3 integers
+$ java CmdTool -l equal 2 2 4 8 2 3
+2 2
+$ java CmdTool -list greater 2 2 4 8 2 3
+4 8 3
+
+4. The -l or -list option followed by at least 2 command options and a list of at least 3 integers. Your 2 tests for this situation should not have the same amount of command options after -l
+$ java CmdTool -list greater 2 sum 2 4 8 2 3 // greater than 2: 4 8 3; sum: 15
+15
+$ java CmdTool -list lesser 3 equal 2 sum 2 4 8 2 3 // lesser than 3: 2 2; equal to 2: 2 2; sum: 4
+4

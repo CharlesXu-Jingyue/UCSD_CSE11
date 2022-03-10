@@ -1,5 +1,4 @@
 import java.nio.file.*;
-import java.nio.*;
 import java.io.IOException;
 import java.util.*;
 
@@ -58,9 +57,20 @@ class StringSearch {
             contentsMatched = matchContents.toArray(contentsMatched);
 
             // Process args[2] to transformations
-            for(String s : contentsMatched) {
-
+            String[] indTransStr = args[2].split("&");
+            Transform[] indTrans = new Transform[indTransStr.length]; // Create query array
+            for(int i = 0; i < indTransStr.length; i ++) {
+                indTrans[i] = readTransform(indTransStr[i]);
             }
+
+            List<String> transformContents = new ArrayList<>();
+            for(String s : contentsMatched) {
+                transformContents.add(applyAll(indTrans, s));
+            }
+            String[] contentsTransformed = new String[transformContents.size()];
+            contentsTransformed = transformContents.toArray(contentsTransformed);
+
+            printArray(contentsTransformed);
         }
     }
 
@@ -107,7 +117,7 @@ class StringSearch {
     }
 
     public static Transform readTransform(String t) {
-        String[] indTAndP = t.split("=||;");
+        String[] indTAndP = t.split("=|;");
         if(indTAndP[0].equals("upper")) {
             return new Upper();
         } else if(indTAndP[0].equals("lower")) {
@@ -117,12 +127,17 @@ class StringSearch {
         } else if(indTAndP[0].equals("last")) {
             return new Last(indTAndP[1]);
         } else {
-            return new Replace(indTAndP[1], indTAndP[2]);
+            return new Replace(indTAndP[1].substring(1, indTAndP[1].length() - 1),
+            indTAndP[2].substring(1, indTAndP[2].length() - 1));
         }
     }
 
     public static String applyAll(Transform[] ts, String s) {
-
+        String currentStr = s;
+        for(Transform t : ts) {
+            currentStr = t.transform(currentStr);
+        }
+        return currentStr;
     }
 }
 
@@ -143,7 +158,7 @@ class Contains implements Query {
     }
 }
 
-class Length implements Query { // dont forget to parseInt
+class Length implements Query {
     int length;
 
     Length(String length) {
@@ -155,7 +170,7 @@ class Length implements Query { // dont forget to parseInt
     }
 }
 
-class Greater implements Query { // dont forget to parseInt
+class Greater implements Query {
     int greaterThan;
 
     Greater(String greaterThan) {
@@ -167,7 +182,7 @@ class Greater implements Query { // dont forget to parseInt
     }
 }
 
-class Less implements Query { // dont forget to parseInt
+class Less implements Query {
     int lessThan;
 
     Less(String lessThan) {

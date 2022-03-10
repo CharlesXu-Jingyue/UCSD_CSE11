@@ -10,7 +10,6 @@ import java.util.*;
 
 class StringSearch {
     public static void main(String[] args) throws IOException {
-        System.out.println(args.length); // inspection
         if(args.length == 1) {
             // Process args[0] to file path
             List<String> fileRead = Files.readAllLines(Paths.get(args[0]));
@@ -26,7 +25,6 @@ class StringSearch {
             
             // Process args[1] to queries
             String[] indQueryStr = args[1].split("&");
-            printArray(indQueryStr);
             Query[] indQuery = new Query[indQueryStr.length];
             for(int i = 0; i < indQueryStr.length; i ++) {
                 indQuery[i] = readQuery(indQueryStr[i]);

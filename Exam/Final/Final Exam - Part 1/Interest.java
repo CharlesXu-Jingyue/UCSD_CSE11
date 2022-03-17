@@ -11,10 +11,10 @@ class Interest {
 
     // Task 2: compoundInterest method
     // Your code here
-    double compoundInterest(double P, double r, double t, double n) { // The method calculates the compound interest and rounds it to two decimal places
-        double C = P*(Math.pow((1 + (r/100)/n), t*n) - 1);
-        double roundedC = Math.round(C*100);
-        return roundedC/100;
+    double compoundInterest(double P, double r, double t, double n) { // Mark
+        double C = P*(Math.pow((1 + (r/100)/n), t*n) - 1); // Calculate
+        double roundedC = Math.round(C*100); // Round
+        return roundedC/100; // Return
     }
 
     double t3 = this.compoundInterest(100, 5, 2, 6); // Expected: 10.47

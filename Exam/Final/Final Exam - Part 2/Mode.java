@@ -11,6 +11,14 @@ class Mode {
             return 0;
         } else {
             for(int i = 0; i < array.length; i ++) {
+                /*
+                iteration | i | max start | max end | mode start | mode end
+                1         | 0 | 0         | 1       | 0          | 1
+                2         | 1 | 1         | 1       | 1          | 1
+                3         | 2 | 1         | 1       | 1          | 1 
+                4         | 3 | 1         | 2       | 1          | 3
+                5         | 4 | 2         | 2       | 3          | 3
+                */
                 if(intMap.get(array[i]) == null) {
                     intMap.put(array[i], 1);
                 } else {
@@ -26,4 +34,7 @@ class Mode {
             return mode;
         }
     }
+
+    int[] tArray = new int[]{1, 4, 3, 3, 5};
+    int t = this.mode(tArray);
 }
